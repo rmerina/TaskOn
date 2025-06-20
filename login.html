@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login | TaskFlow</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="login.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="tsm.css">
+</head>
+<body class="login-bg min-h-screen flex items-center justify-center p-4">
+    <div class="w-full max-w-md">
+        <!-- Login Card -->
+        <div class="bg-white rounded-xl card-shadow overflow-hidden">
+            <!-- Header -->
+            <div class="bg-gradient-to-r from-purple-600 to-indigo-600 py-6 px-8 text-center">
+                <div class="w-16 h-16 bg-white rounded-full flex items-center justify-center mx-auto mb-3">
+                    <i class="fas fa-tasks text-indigo-600 text-2xl"></i>
+                </div>
+                <h1 class="text-2xl font-bold text-white">TaskFlow</h1>
+                <p class="text-indigo-100 mt-1">Your productivity companion</p>
+            </div>
+            
+            <!-- Login Form -->
+            <form id="loginForm" class="p-8 space-y-6">
+                <div>
+                    <label for="email" class="block text-sm font-medium text-gray-700 mb-1">Email</label>
+                    <div class="relative">
+                        <div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
+                            <i class="fas fa-envelope text-gray-400"></i>
+                        </div>
+                        <input 
+                            type="email" 
+                            id="email" 
+                            class="input-focus w-full pl-10 pr-3 py-2 border border-gray-300 rounded-lg focus:outline-none transition"
+                            placeholder="your@email.com"
+                            required
+                        >
+                    </div>
+                    <p id="emailError" class="mt-1 text-sm text-red-600 hidden">Please enter a valid email</p>
+                </div>
+                
+                <div>
+                    <label for="password" class="block text-sm font-medium text-gray-700 mb-1">Password</label>
+                    <div class="relative">
+                        <div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
+                            <i class="fas fa-lock text-gray-400"></i>
+                        </div>
+                        <input 
+                            type="password" 
+                            id="password" 
+                            class="input-focus w-full pl-10 pr-3 py-2 border border-gray-300 rounded-lg focus:outline-none transition"
+                            placeholder="••••••••"
+                            required
+                            minlength="6"
+                        >
+                    </div>
+                    <p id="passwordError" class="mt-1 text-sm text-red-600 hidden">Password must be 6+ characters</p>
+                </div>
+                
+                <div class="flex items-center justify-between">
+                    <div class="flex items-center">
+                        <input id="remember" type="checkbox" class="h-4 w-4 text-indigo-600 focus:ring-indigo-500 border-gray-300 rounded">
+                        <label for="remember" class="ml-2 text-sm text-gray-600">Remember me</label>
+                    </div>
+                    <a href="#" class="text-sm text-indigo-600 hover:text-indigo-500">Forgot password?</a>
+                </div>
+                
+                <button type="submit" id="loginBtn" class="btn-primary w-full py-2 px-4 text-white rounded-lg font-medium">
+                    <span id="loginText">Sign In</span>
+                    <span id="loginSpinner" class="hidden">
+                        <i class="fas fa-circle-notch fa-spin mr-1"></i> Signing in...
+                    </span>
+                </button>
+            </form>
+        </div>
+    </div>
+</body>
+</html>
