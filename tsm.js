@@ -429,7 +429,6 @@
                     renderTasks();
                     hideTaskMenu();
                 });
-                
                 moveToProgressBtn.addEventListener('click', function() {
                     const taskIndex = tasks.findIndex(t => t.id === currentTaskId);
                     if (taskIndex !== -1) {
@@ -447,17 +446,16 @@
                     }
                     hideTaskMenu();
                 });
-                
                 // Store original form submit handler
                 const handleFormSubmit = taskForm.addEventListener('submit', function(e) {
                     e.preventDefault();
                 });
             }
-            
             // Initialize the app
             init();
+            //Redirect to login
             document.getElementById('logout-btn').addEventListener('click', function () {
-                window.location.href = "/login.html"; // Change to your login page
+                window.location.href = "/login.html"; 
                 });
             });
                 
